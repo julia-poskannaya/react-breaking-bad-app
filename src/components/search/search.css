@@ -1,0 +1,9 @@
+.btn-search {
+  position: absolute;
+  right: 2.7rem;
+  cursor: pointer;
+  bottom: 1rem;
+}
+.clear {
+  right: 1rem;
+}

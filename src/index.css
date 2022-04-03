@@ -1,9 +1,8 @@
 @import url('./vendors/normalize.css');
 @import url('./vendors/fonts/fonts.css');
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-}
+@import url('./components/app/app.css');
+@import url('./components/character/character.css');
+@import url('./components/characters/characters.css');
+@import url('./components/preloader/preloader.css');
+@import url('./components/header/header.css');
+@import url('./components/search/search.css');
