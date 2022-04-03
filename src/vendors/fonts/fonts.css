@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-regular/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-regular/Poppins-Regular.ttf") format("truetype"),
+    url("../fonts/Poppins-regular/Poppins-Regular.woff") format("woff"),
+    url("../fonts/Poppins-regular/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: "regular";
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-medium/Poppins-Medium.eot");
+  src: url("../fonts/Poppins-medium/Poppins-Medium.ttf") format("truetype"),
+    url("../fonts/Poppins-medium/Poppins-Medium.woff") format("woff"),
+    url("../fonts/Poppins-medium/Poppins-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: "medium";
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("../fonts/Poppins-bold/Poppins-Bold.eot");
+  src: url("../fonts/Poppins-bold/Poppins-Bold.ttf") format("truetype"),
+    url("../fonts/Poppins-bold/Poppins-Bold.woff") format("woff"),
+    url("../fonts/Poppins-bold/Poppins-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: "bold";
+}
