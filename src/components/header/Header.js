@@ -2,7 +2,7 @@ import logo from '../../img/breaking-bad.svg';
 
 const Header = () => {
   return (
-    <nav className="teal darken-3">
+    <nav className="teal darken-2">
       <div className="nav-wrapper container">
         <a href="logo" className="brand-logo">
           <img className="logo" src={logo} alt="logo"></img>
