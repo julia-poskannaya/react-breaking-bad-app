@@ -1,0 +1,21 @@
+.paginate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    height: 5rem;
+}
+
+.paginate li{
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.paginate li:hover{
+    cursor: pointer;
+}
+
+.paginate li.active {
+    background-color: #4db6ac;
+    color: #ffff;
+}

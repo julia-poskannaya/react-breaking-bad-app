@@ -1,4 +1,4 @@
-const Character = ({ name, birthday, status, img }) => {
+const Character = ({ name, birthday, status, img, nickname, portrayed }) => {
   return (
     <div className="card">
       <div className="card-image waves-effect waves-block waves-light">
@@ -9,8 +9,10 @@ const Character = ({ name, birthday, status, img }) => {
           {name}
         </span>
         <div className="char-description">
-          <p>{birthday}</p>
-          <p>{status}</p>
+          <p>Date of birth: {birthday}</p>
+          <p> Status: {status}</p>
+          <p>Nickname: {nickname}</p>
+          <p>Actor/Actress: {portrayed}</p>
         </div>
       </div>
     </div>

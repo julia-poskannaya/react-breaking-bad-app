@@ -6,16 +6,16 @@ class Api {
     return Promise.reject(`Error: ${response.status}`);
   }
 
-  async getChars() {
+  async getChars(limit, offset) {
     const response = await fetch(
-      'https://www.breakingbadapi.com/api/characters?limit=12'
+      `https://www.breakingbadapi.com/api/characters?limit=${limit}&offset=${offset}`
     );
     return await this.checkResponse(response);
   }
 
-  async searchChar(firstname) {
+  async searchChar(charName) {
     const response = await fetch(
-      `https://www.breakingbadapi.com/api/characters?name=${firstname}`
+      `https://www.breakingbadapi.com/api/characters?name=${charName}`
     );
     return await this.checkResponse(response);
   }
