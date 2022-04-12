@@ -2,7 +2,8 @@ const Pagination = ({
   pageCount,
   goToTheNextPage,
   goToThePrevPage,
-  pageNumber
+  pageNumber,
+  getCurrentPage,
 }) => {
   const pages = [];
   for (let i = 1; i <= pageCount; i++) {
@@ -17,7 +18,11 @@ const Pagination = ({
         </li>
         {pages.map((item) => {
           return (
-            <li key={item} className= {(pageNumber + 1) === item ? 'active' : ''}>
+            <li
+              key={item}
+              className={pageNumber + 1 === item ? 'active' : ''}
+              onClick={() => getCurrentPage(item - 1)}
+            >
               {item}
             </li>
           );

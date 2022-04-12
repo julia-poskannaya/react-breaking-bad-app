@@ -9,12 +9,13 @@ const Main = () => {
   const [chars, setChars] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
+  const [name, setName] = useState('');
 
   const limit = 9;
   const offset = pageNumber * limit;
   const pageCount = Math.ceil(62 / limit);
 
-  const handleSearch = (name) => {
+  useEffect(() => {
     setLoading(true);
 
     api
@@ -27,14 +28,7 @@ const Main = () => {
         setLoading(false);
         console.log(`Error: ${error}`);
       });
-  };
-
-  const handleResetSearch = () => {
-    api.getChars(limit, offset).then((data) => {
-      setChars(data);
-      setLoading(false);
-    });
-  };
+  }, [name])
 
   const goToTheNextPage = () => {
     setPageNumber(pageNumber + 1);
@@ -43,6 +37,10 @@ const Main = () => {
   const goToThePrevPage = () => {
     setPageNumber(pageNumber - 1);
   };
+
+  const getCurrentPage = (page) => {
+    setPageNumber(page)
+  }
 
   useEffect(() => {
     api.getChars(limit, offset).then((data) => {
@@ -54,8 +52,7 @@ const Main = () => {
   return (
     <main className="container content">
       <SearchCharacter
-        handleSearch={handleSearch}
-        handleResetSearch={handleResetSearch}
+        getName = {(n) => setName(n)}
       />
       {loading ? <Preloader /> : <Characters chars={chars} />}
       <Pagination
@@ -64,6 +61,7 @@ const Main = () => {
         goToTheNextPage={goToTheNextPage}
         goToThePrevPage={goToThePrevPage}
         pageNumber={pageNumber}
+        getCurrentPage={getCurrentPage}
       />
     </main>
   );
