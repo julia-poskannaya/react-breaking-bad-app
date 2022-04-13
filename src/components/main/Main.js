@@ -17,7 +17,6 @@ const Main = () => {
 
   useEffect(() => {
     setLoading(true);
-
     api
       .searchChar(name)
       .then((response) => {
@@ -28,7 +27,7 @@ const Main = () => {
         setLoading(false);
         console.log(`Error: ${error}`);
       });
-  }, [name])
+  }, [name]);
 
   const goToTheNextPage = () => {
     setPageNumber(pageNumber + 1);
@@ -39,8 +38,18 @@ const Main = () => {
   };
 
   const getCurrentPage = (page) => {
-    setPageNumber(page)
-  }
+    setPageNumber(page);
+  };
+
+  const handleSearch = (n) => {
+    if (!n) {
+      return api.getChars(limit, offset).then((data) => {
+        setChars(data);
+        setLoading(false);
+      });
+    }
+    setName(n);
+  };
 
   useEffect(() => {
     api.getChars(limit, offset).then((data) => {
@@ -51,9 +60,7 @@ const Main = () => {
 
   return (
     <main className="container content">
-      <SearchCharacter
-        getName = {(n) => setName(n)}
-      />
+      <SearchCharacter handleSearch={handleSearch} />
       {loading ? <Preloader /> : <Characters chars={chars} />}
       <Pagination
         pageCount={pageCount}

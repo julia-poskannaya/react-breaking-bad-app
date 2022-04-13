@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const SearchCharacter = ({ getName }) => {
+const SearchCharacter = ({ handleSearch }) => {
   const [term, setTerm] = useState('');
 
-  const handleChange = (n) => {
-    setTerm(n);
-    getName(n)
+  const handleChange = (e) => {
+    setTerm(e.target.value);
+    handleSearch(e.target.value);
   };
-  
+
   return (
     <div className="input-field">
       <input
@@ -16,11 +16,9 @@ const SearchCharacter = ({ getName }) => {
         type="text"
         className="validate"
         value={term}
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={handleChange}
       />
-      <i className="material-icons search-icon">
-        search
-      </i>
+      <i className="material-icons search-icon">search</i>
     </div>
   );
 };
