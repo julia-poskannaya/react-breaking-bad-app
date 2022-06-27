@@ -7,14 +7,6 @@ const Header = () => {
         <a href="logo" className="brand-logo">
           <img className="logo" src={logo} alt="logo"></img>
         </a>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <a href="characters">Characters</a>
-          </li>
-          <li>
-            <a href="episodes">Episodes</a>
-          </li>
-        </ul>
       </div>
     </nav>
   );
